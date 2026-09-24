@@ -1,0 +1,375 @@
+Sistema de Controle de Estoque
+    1. Objetivo
+
+Criar um sistema web simples de controle de estoque para uma loja virtual, utilizando tecnologias fundamentais do desenvolvimento web.
+
+O projeto será desenvolvido para portfólio, com foco em demonstrar:
+
+. Organização de código
+. CRUD
+. Banco de dados
+. Comunicação entre frontend e backend
+. Regras de negócio
+. Controle de estoque
+. Validação de dados
+    2. Tecnologias
+. Frontend
+. HTML5
+. CSS3
+. JavaScript
+. Backend
+. PHP
+. Banco de dados
+. MySQL
+. XAMPP
+    3. Escopo do projeto
+
+O sistema terá inicialmente:
+
+Dashboard
+Total de produtos
+Produtos com estoque baixo
+Quantidade de entradas
+Quantidade de saídas
+Últimas movimentações
+Produtos
+Cadastrar produto
+Listar produtos
+Editar produto
+Excluir produto
+Pesquisar produto
+Visualizar estoque
+Movimentações
+Registrar entrada
+Registrar saída
+Consultar histórico
+Atualizar estoque automaticamente
+    4. Estrutura das telas
+Dashboard
+
+Resumo geral do estoque.
+
+Informações:
+
+Total de produtos
+Estoque baixo
+Entradas recentes
+Saídas recentes
+Últimas movimentações
+Produtos
+
+Tabela contendo:
+
+Campo	Informação
+ID	Identificação
+Nome	Nome do produto
+Categoria	Categoria
+Preço	Preço atual
+Estoque	Quantidade disponível
+Ações	Editar / Excluir
+Movimentações
+
+Permitir:
+
+Entrada
+
+Produto + quantidade
+
+Estoque atual: 10
+Entrada: +5
+Novo estoque: 15
+Saída
+
+Produto + quantidade
+
+Estoque atual: 15
+Saída: -3
+Novo estoque: 12
+
+O sistema deve impedir uma saída maior que o estoque disponível.
+
+    5. Banco de dados
+
+Banco:
+
+estoque_db
+Tabela: categorias
+categorias
+-------------------------
+id
+nome
+Tabela: produtos
+produtos
+-------------------------
+id
+nome
+categoria_id
+preco
+estoque
+criado_em
+Tabela: movimentacoes
+movimentacoes
+-------------------------
+id
+produto_id
+tipo
+quantidade
+criado_em
+
+Relacionamentos:
+
+categorias
+     │
+     │ 1:N
+     ▼
+produtos
+     │
+     │ 1:N
+     ▼
+movimentacoes
+    6. Regras de negócio
+Cadastro de produto
+Nome obrigatório
+Categoria obrigatória
+Preço maior que zero
+Estoque inicial igual ou maior que zero
+Entrada
+quantidade > 0
+
+A quantidade será adicionada ao estoque atual.
+
+Saída
+quantidade > 0
+
+E:
+
+quantidade <= estoque atual
+
+Caso contrário:
+
+Estoque insuficiente.
+    7. Estrutura de pastas
+sistema-estoque/
+│
+├── index.html
+│
+├── pages/
+│   ├── produtos.html
+│   └── movimentacoes.html
+│
+├── css/
+│   ├── style.css
+│   ├── dashboard.css
+│   └── produtos.css
+│
+├── js/
+│   ├── app.js
+│   ├── produtos.js
+│   └── movimentacoes.js
+│
+├── php/
+│   ├── conexao.php
+│   │
+│   ├── produtos/
+│   │   ├── listar.php
+│   │   ├── cadastrar.php
+│   │   ├── editar.php
+│   │   └── excluir.php
+│   │
+│   └── movimentacoes/
+│       ├── entrada.php
+│       └── saida.php
+│
+├── database/
+│   └── estoque.sql
+│
+└── assets/
+    └── images/
+    8. Funcionamento do sistema
+
+Fluxo principal:
+
+USUÁRIO
+   ↓
+HTML
+   ↓
+JavaScript
+   ↓
+PHP
+   ↓
+MySQL
+   ↓
+PHP
+   ↓
+JavaScript
+   ↓
+TELA
+
+Exemplo de cadastro:
+
+Usuário preenche formulário
+        ↓
+JavaScript coleta os dados
+        ↓
+JavaScript envia para PHP
+        ↓
+PHP valida os dados
+        ↓
+PHP salva no MySQL
+        ↓
+MySQL retorna resultado
+        ↓
+JavaScript atualiza a interface
+    9. Ordem de desenvolvimento
+FASE 1 — Banco de dados
+
+Criar banco estoque_db
+
+Criar tabela categorias
+
+Criar tabela produtos
+
+Criar tabela movimentacoes
+
+Criar relacionamentos
+
+Inserir alguns dados para teste
+
+FASE 2 — Estrutura HTML
+
+Criar Dashboard
+
+Criar página de produtos
+
+Criar página de movimentações
+
+Criar formulários
+
+Criar tabelas
+
+FASE 3 — CSS
+
+Layout
+
+Sidebar
+
+Header
+
+Cards
+
+Tabelas
+
+Formulários
+
+Responsividade
+
+FASE 4 — JavaScript
+
+Eventos
+
+Formulários
+
+Validação
+
+Manipulação do DOM
+
+Fetch API
+
+FASE 5 — PHP
+
+Conexão com MySQL
+
+Cadastrar produto
+
+Listar produtos
+
+Editar produto
+
+Excluir produto
+
+FASE 6 — Controle de estoque
+
+Entrada
+
+Saída
+
+Validação de estoque
+
+Histórico
+
+Atualização automática
+
+FASE 7 — Dashboard
+
+Total de produtos
+
+Estoque baixo
+
+Entradas
+
+Saídas
+
+Últimas movimentações
+
+FASE 8 — Finalização
+
+Testar todas as funções
+
+Corrigir erros
+
+Melhorar responsividade
+
+Criar README
+
+Preparar projeto para GitHub
+
+Preparar apresentação para portfólio
+
+    10. Funcionalidades futuras
+
+Somente depois que o projeto principal estiver funcionando:
+
+Login
+Usuários/funcionários
+Fornecedores
+Categorias avançadas
+Relatórios
+Exportação
+Controle de permissões
+
+Essas funcionalidades não fazem parte do MVP inicial.
+
+    11. Objetivo de aprendizado
+
+Durante o desenvolvimento, os principais conceitos estudados serão:
+
+HTML
+ ↓
+CSS
+ ↓
+JavaScript
+ ↓
+Fetch API
+ ↓
+PHP
+ ↓
+MySQL
+ ↓
+CRUD
+ ↓
+Relacionamentos
+ ↓
+Regras de negócio
+
+A prioridade não será criar muitas funcionalidades.
+
+A prioridade será entender como cada parte funciona e como elas se conectam.
+
+    12. Status atual
+Projeto
+
+🟡 Planejamento
+
+Próxima etapa
+
+Criar o banco de dados estoque_db no XAMPP.
