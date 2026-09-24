@@ -1,0 +1,1 @@
+## Mini Loja - Projeto de estudo. ##
