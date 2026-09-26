@@ -100,16 +100,16 @@ movimentacoes
 └── criado_em
 ```
 
-- [ ] Criar tabela
-- [ ] Definir `id` como PRIMARY KEY
-- [ ] Definir `id` como AUTO_INCREMENT
-- [ ] Criar campo `produto_id`
-- [ ] Criar campo `tipo`
-- [ ] Criar campo `quantidade`
-- [ ] Criar campo `criado_em`
-- [ ] Criar FOREIGN KEY para `produtos`
-- [ ] Definir tipos permitidos: `entrada` e `saida`
-- [ ] Definir quantidade maior que zero
+- [x] Criar tabela
+- [x] Definir `id` como PRIMARY KEY
+- [x] Definir `id` como AUTO_INCREMENT
+- [x] Criar campo `produto_id`
+- [x] Criar campo `tipo`
+- [x] Criar campo `quantidade`
+- [x] Criar campo `criado_em`
+- [x] Criar FOREIGN KEY para `produtos`
+- [x] Definir tipos permitidos: `entrada` e `saida`
+- [x] Definir quantidade maior que zero
 
 ---
 
@@ -123,9 +123,9 @@ categorias.id
 produtos.categoria_id
 ```
 
-- [ ] Conferir FOREIGN KEY
-- [ ] Testar produto associado a uma categoria
-- [ ] Testar categoria inexistente
+- [x] Conferir FOREIGN KEY
+- [x] Testar produto associado a uma categoria
+- [x] Testar categoria inexistente
 
 ---
 
@@ -137,9 +137,9 @@ produtos.id
 movimentacoes.produto_id
 ```
 
-- [ ] Conferir FOREIGN KEY
-- [ ] Testar movimentação associada a um produto
-- [ ] Testar produto inexistente
+- [x] Conferir FOREIGN KEY
+- [x] Testar movimentação associada a um produto
+- [x] Testar produto inexistente
 
 ---
 
@@ -153,8 +153,8 @@ Informática
 Acessórios
 ```
 
-- [ ] Inserir categorias
-- [ ] Conferir com SELECT
+- [x] Inserir categorias
+- [x] Conferir com SELECT
 
 ```sql
 SELECT * FROM categorias;
@@ -174,11 +174,11 @@ Headset
 Monitor
 ```
 
-- [ ] Inserir produtos
-- [ ] Associar cada produto a uma categoria
-- [ ] Definir preço
-- [ ] Definir estoque inicial
-- [ ] Conferir campo `ativo`
+- [x] Inserir produtos
+- [x] Associar cada produto a uma categoria
+- [x] Definir preço
+- [x] Definir estoque inicial
+- [x] Conferir campo `ativo`
 
 Consulta:
 
@@ -205,9 +205,9 @@ Mouse Gamer → saída → 2
 Webcam → saída → 1
 ```
 
-- [ ] Inserir entradas
-- [ ] Inserir saídas
-- [ ] Conferir movimentações
+- [x] Inserir entradas
+- [x] Inserir saídas
+- [x] Conferir movimentações
 
 Consulta:
 
