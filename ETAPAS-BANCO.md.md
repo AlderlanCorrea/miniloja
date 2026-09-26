@@ -12,13 +12,13 @@ estoque_db
 
 # 1. Criar o banco
 
-- [ ] Abrir o XAMPP
-- [ ] Iniciar Apache
-- [ ] Iniciar MySQL
-- [ ] Abrir o phpMyAdmin
-- [ ] Criar o banco `estoque_db`
-- [ ] Selecionar o banco
-- [ ] Executar:
+- [x] Abrir o XAMPP
+- [x] Iniciar Apache
+- [x] Iniciar MySQL
+- [x] Abrir o phpMyAdmin
+- [x] Criar o banco `estoque_db`
+- [x] Selecionar o banco
+- [x] Executar:
 
 ```sql
 CREATE DATABASE estoque_db;
@@ -40,12 +40,12 @@ categorias
 └── nome
 ```
 
-- [ ] Criar tabela
-- [ ] Definir `id` como PRIMARY KEY
-- [ ] Definir `id` como AUTO_INCREMENT
-- [ ] Definir `nome` como obrigatório
-- [ ] Definir `nome` como UNIQUE
-- [ ] Testar inserção de categoria
+- [x] Criar tabela
+- [x] Definir `id` como PRIMARY KEY
+- [x] Definir `id` como AUTO_INCREMENT
+- [x] Definir `nome` como obrigatório
+- [x] Definir `nome` como UNIQUE
+- [x] Testar inserção de categoria
 
 Exemplos:
 
@@ -72,18 +72,18 @@ produtos
 └── criado_em
 ```
 
-- [ ] Criar tabela
-- [ ] Definir `id` como PRIMARY KEY
-- [ ] Definir `id` como AUTO_INCREMENT
-- [ ] Criar campo `nome`
-- [ ] Criar campo `categoria_id`
-- [ ] Criar campo `preco`
-- [ ] Criar campo `estoque`
-- [ ] Criar campo `ativo`
-- [ ] Criar campo `criado_em`
-- [ ] Criar FOREIGN KEY para `categorias`
-- [ ] Definir valor padrão de `ativo`
-- [ ] Definir data automática de criação
+- [x] Criar tabela
+- [x] Definir `id` como PRIMARY KEY
+- [x] Definir `id` como AUTO_INCREMENT
+- [x] Criar campo `nome`
+- [x] Criar campo `categoria_id`
+- [x] Criar campo `preco`
+- [x] Criar campo `estoque`
+- [x] Criar campo `ativo`
+- [x] Criar campo `criado_em`
+- [x] Criar FOREIGN KEY para `categorias`
+- [x] Definir valor padrão de `ativo`
+- [x] Definir data automática de criação
 
 ---
 
