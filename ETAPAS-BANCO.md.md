@@ -230,9 +230,9 @@ INNER JOIN categorias
     ON produtos.categoria_id = categorias.id;
 ```
 
-- [ ] Executar consulta
-- [ ] Entender o INNER JOIN
-- [ ] Conferir resultado
+- [x] Executar consulta
+- [x] Entender o INNER JOIN
+- [x] Conferir resultado
 
 ---
 
@@ -251,11 +251,11 @@ INNER JOIN produtos
     ON movimentacoes.produto_id = produtos.id;
 ```
 
-- [ ] Executar consulta
-- [ ] Conferir produtos
-- [ ] Conferir entradas
-- [ ] Conferir saídas
-- [ ] Entender o relacionamento
+- [x] Executar consulta
+- [x] Conferir produtos
+- [x] Conferir entradas
+- [x] Conferir saídas
+- [x] Entender o relacionamento
 
 ---
 
@@ -277,8 +277,8 @@ INNER JOIN produtos
 
 ## Estoque
 
-- [ ] Testar entrada
-- [ ] Testar saída
+- [x] Testar entrada
+- [x] Testar saída
 - [ ] Testar saída maior que o estoque
 - [ ] Confirmar que estoque não fica negativo
 

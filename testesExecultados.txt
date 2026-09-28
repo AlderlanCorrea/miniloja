@@ -1,0 +1,221 @@
+✅ Testes realizados no banco
+1. Categoria com nome
+
+Criamos a tabela categorias com:
+
+id como PRIMARY KEY
+AUTO_INCREMENT
+nome como NOT NULL
+nome como UNIQUE
+
+Também inserimos categorias de teste.
+
+Resultado: ✅ Funcionando.
+
+2. Produto com categoria existente
+
+Criamos produtos associados às categorias existentes.
+
+Resultado: ✅ Funcionando.
+
+3. Produto com categoria inexistente
+
+Tentamos:
+
+categoria_id = 999
+
+A FOREIGN KEY bloqueou.
+
+Resultado: ✅ Funcionando.
+
+Isso confirmou:
+
+categorias.id
+      ↓
+produtos.categoria_id
+4. Movimentação com produto inexistente
+
+Tentamos:
+
+produto_id = 999
+
+A FOREIGN KEY bloqueou.
+
+Resultado: ✅ Funcionando.
+
+Relacionamento:
+
+produtos.id
+      ↓
+movimentacoes.produto_id
+5. Nome do produto vazio
+
+Tentamos cadastrar:
+
+nome = ''
+
+O MySQL aceitou.
+
+Resultado: ⚠️ Precisa de validação na aplicação.
+
+Isso nos ensinou que:
+
+NOT NULL ≠ não pode ser vazio
+6. Preço igual a zero
+
+Tentamos:
+
+preco = 0
+
+O MySQL aceitou.
+
+Resultado: ⚠️ Precisa de validação.
+
+Nossa regra continua sendo:
+
+preço > 0
+7. Estoque negativo
+
+Tentamos:
+
+estoque = -5
+
+O MySQL aceitou.
+
+Resultado: ⚠️ Precisa de validação.
+
+Nossa regra:
+
+estoque >= 0
+8. Tipo de movimentação inválido
+
+Tentamos:
+
+tipo = 'devolucao'
+
+O MySQL não armazenou devolucao; acabou armazenando o valor vazio.
+
+Resultado: ⚠️ Não podemos depender somente do ENUM.
+
+No PHP vamos validar explicitamente:
+
+entrada
+ou
+saida
+9. Quantidade igual a zero
+
+Tentamos:
+
+quantidade = 0
+
+O MySQL aceitou.
+
+Resultado: ⚠️ Precisa de validação.
+
+Regra:
+
+quantidade > 0
+10. Quantidade negativa
+
+Tentamos:
+
+quantidade = -5
+
+O MySQL aceitou.
+
+Resultado: ⚠️ Precisa de validação.
+
+11. Entrada de estoque
+
+Fizemos:
+
+Webcam
+estoque inicial = 10
+
+entrada = 5
+
+10 + 5 = 15
+
+Depois fizemos uma saída de 2:
+
+15 - 2 = 13
+
+O estoque final da Webcam ficou 13.
+
+Resultado: ✅ Regra funcionando no teste manual.
+
+12. Histórico de movimentações
+
+Consultamos:
+
+SELECT
+    produtos.nome,
+    movimentacoes.tipo,
+    movimentacoes.quantidade,
+    movimentacoes.criado_em
+FROM movimentacoes
+INNER JOIN produtos
+    ON movimentacoes.produto_id = produtos.id;
+
+Conseguimos visualizar:
+
+Webcam | entrada | 5
+Webcam | saida   | 2
+
+Resultado: ✅ Funcionando.
+
+13. Saída maior que o estoque
+
+Agora testamos:
+
+Monitor
+estoque = 5
+
+saída = 8
+
+O MySQL aceitou a movimentação.
+
+Resultado: ⚠️ Essa regra precisa ser controlada pelo PHP.
+
+A regra será:
+
+Se quantidade_da_saida > estoque_atual
+        ↓
+bloquear operação
+        ↓
+não registrar movimentação
+        ↓
+não alterar estoque
+🧠 A principal conclusão dos testes
+
+Agora conseguimos separar claramente o que o banco faz e o que será responsabilidade da aplicação.
+
+MySQL consegue garantir
+PRIMARY KEY
+FOREIGN KEY
+NOT NULL
+AUTO_INCREMENT
+ENUM
+tipos dos campos
+PHP precisará garantir as regras de negócio
+nome não pode estar vazio
+preço > 0
+estoque >= 0
+quantidade > 0
+tipo válido
+saída não pode superar estoque
+
+E o JavaScript também fará validações para melhorar a experiência do usuário.
+
+        USUÁRIO
+           ↓
+     JavaScript
+    validação visual
+           ↓
+         PHP
+   validação de segurança
+           ↓
+        MySQL
+ integridade dos dados
+
+Esse foi um dos objetivos mais importantes dessa etapa: você não apenas criou as tabelas; você testou e descobriu quais regras cada camada realmente consegue garantir.
