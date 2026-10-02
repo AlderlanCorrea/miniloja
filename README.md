@@ -67,32 +67,42 @@ Todos os dados presentes neste projeto são **completamente fictícios**:
 
 ### Pré-requisitos
 
-- Servidor web com suporte a PHP 7.0+
+- **XAMPP** (Apache + PHP + MySQL)
 - Navegador moderno
 - Git (opcional)
 
-### Instalação
+### Instalação com XAMPP
 
 ```bash
-# Clone o repositório
+# 1. Clone o repositório na pasta htdocs do XAMPP
+cd C:\xampp\htdocs  # Windows
+# ou
+cd /Applications/XAMPP/htdocs  # macOS
+# ou
+cd /opt/lampp/htdocs  # Linux
+
 git clone https://github.com/AlderlanCorrea/miniloja.git
 
-# Navegue até o diretório
-cd miniloja
+# 2. Inicie o XAMPP Control Panel
+# - Clique em "Start" para Apache e MySQL
 
-# Configure seu servidor web (Apache, Nginx, etc.)
-# e aponte para a pasta do projeto
-
-# Abra no navegador
+# 3. Abra no navegador
 # http://localhost/miniloja
 ```
+
+### Configuração Rápida
+
+1. Abra o **XAMPP Control Panel**
+2. Inicie o módulo **Apache**
+3. Abra `http://localhost/phpmyadmin` (opcional, se usar banco de dados)
+4. Navegue para `http://localhost/miniloja`
 
 ---
 
 ## 📁 Estrutura do Projeto
 
 ```
-miniloja/
+C:\xampp\htdocs\miniloja\    (ou seu caminho XAMPP)
 ├── index.html              # Página principal
 ├── README.md               # Este arquivo
 ├── assets/                 # Imagens, CSS e recursos
@@ -121,6 +131,7 @@ Estude o código-fonte para compreender:
 - Manipulação de DOM com JavaScript
 - Processamento de dados com PHP
 - Estrutura de um projeto web
+- Como rodar projetos PHP localmente com XAMPP
 
 ### Para Prototipagem
 
@@ -149,6 +160,32 @@ Adapte e melhore o projeto para:
 
 ---
 
+## 💻 Desenvolvimento com XAMPP
+
+### Arquivo de Configuração PHP
+
+Você pode criar um arquivo `config.php` para facilitar o desenvolvimento:
+
+```php
+<?php
+// config.php
+define('BASE_URL', 'http://localhost/miniloja/');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');  // XAMPP padrão é vazio
+define('DB_NAME', 'miniloja');
+?>
+```
+
+### Dicas de Desenvolvimento
+
+- Use `http://localhost/phpmyadmin` para gerenciar banco de dados
+- Ative o modo debug para ver erros PHP
+- Utilize as ferramentas de desenvolvimento do navegador (F12)
+- Teste suas mudanças em tempo real
+
+---
+
 ## 📝 Observações Importantes
 
 Se você quiser usar este código como base para um **projeto de produção**, lembre-se de:
@@ -159,6 +196,7 @@ Se você quiser usar este código como base para um **projeto de produção**, l
 - 📋 Implementar conformidade com LGPD/GDPR
 - 🚀 Realizar otimizações de performance
 - 📚 Adicionar documentação técnica detalhada
+- 🖥️ Deploy em um servidor web profissional (não use XAMPP para produção)
 
 ---
 
@@ -198,6 +236,8 @@ Obrigado por visitar este projeto! Se foi útil para seus estudos, considere dei
 <div align="center">
 
 **Desenvolvido com ❤️ para fins de estudos e aprendizado**
+
+*Desenvolvido e testado com XAMPP*
 
 *Último update: 2026*
 
