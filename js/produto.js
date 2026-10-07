@@ -1,3 +1,39 @@
+const formProduto = document.getElementById("form-produto");
+
+formProduto.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const categoria = document.getElementById("categoria").value;
+  const preco = document.getElementById("preco").value;
+  const estoque = document.getElementById("estoque").value;
+
+  console.log("Nome:", nome);
+  console.log("Categoria:", categoria);
+  console.log("Preço:", preco);
+  console.log("Estoque:", estoque);
+
+  fetch("php/produtos/cadastrar.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nome: nome,
+      categoria_id: categoria,
+      preco: preco,
+      estoque: estoque,
+    }),
+  })
+    .then((resposta) => resposta.json())
+    .then((dados) => {
+      console.log("Resposta do PHP:", dados);
+    })
+    .catch((erro) => {
+      console.error("Erro:", erro);
+    });
+});
+
 console.log("produtos.js carregado!");
 fetch("php/produtos/listar.php")
   .then((resposta) => resposta.json())
