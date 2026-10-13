@@ -41,6 +41,16 @@ if (empty($estoque)) {
     exit;
 }
 
+
+if (!isset($preco) || !is_numeric($preco) || $preco <= 0) {
+    echo json_encode([
+        "sucesso" => false,
+        "mensagem" => "O preço deve ser um número maior que zero"
+    ]);
+    exit;
+}
+
+
 $sql = "INSERT INTO produtos
         (nome, categoria_id, preco, estoque)
         VALUES (?, ?, ?, ?)";
