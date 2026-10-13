@@ -6,7 +6,7 @@
     --cor-secundaria: #EFF6FF;
     --cor-ternaria: #BC4800;
     --cor-neutra: #64748B;
-    --danger: #DC2626;
+    --danger: #DC2626;  
     --success: #16A34A;
     --font-family: 'Inter', sans-serif;
 }
@@ -139,29 +139,26 @@ body {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-}
-
-.search-box > img {
-    flex: 0 0 13.5px;
-    width: 13.5px;
-    height: 13.5px;
-}
-
-.search-box input {
-    min-width: 0;
-    width: 100%;
-    padding: 0;
-    color: #0f172a;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    font: inherit;
-    font-size: 14px;
-}
-
-.search-box input::placeholder {
-    color: #737686;
-    opacity: 1;
+    img {
+        flex: 0 0 13.5px;
+        width: 13.5px;
+        height: 13.5px;
+    }
+    input {
+        min-width: 0;
+        width: 100%;
+        padding: 0;
+        color: #0f172a;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        font: inherit;
+        font-size: 14px;
+    }
+    input::placeholder {
+        color: #737686;
+        opacity: 1;
+    }
 }
 
 .notification-button {
@@ -176,11 +173,10 @@ body {
     border: 0;
     border-radius: 8px;
     cursor: pointer;
-}
-
-.notification-button > img {
-    width: 14.667px;
-    height: 18.333px;
+    img {
+        width: 14.667px;
+        height: 18.333px;
+    }
 }
 
 .notification-dot {
@@ -189,7 +185,7 @@ body {
     right: 5.67px;
     width: 8px;
     height: 8px;
-    background: #dc2626;
+    background: var(--cor-ternaria);
     border: 2px solid #fff;
     border-radius: 50%;
 }
@@ -291,25 +287,19 @@ body > section {
     border-radius: 8px;
     box-shadow: 0 1px 1px rgba(15, 23, 42, 0.05);
     cursor: pointer;
-}
-
-.filtro-data > img {
-    display: block;
-    flex: none;
-}
-
-.filtro-data select {
-    min-width: 0;
-    padding: 0;
-    color: #0f172a;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    appearance: none;
-    font: 500 14px/20px var(--font-family);
-    cursor: pointer;
+    img {
+        display: block;
+        flex: none;
     }
-
+    select {
+      color: #0f172a;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      font: 500 14px/20px var(--font-family);   
+      cursor: pointer;  
+    }
+}
 
 #lista-produtos {
     display: grid;
